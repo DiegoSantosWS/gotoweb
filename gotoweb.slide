@@ -111,9 +111,39 @@ Logo se criar sua aplicação da forma mostrada, possívelmente so vai servir o 
 
 Vamos entender um pouco mais sobre isso no próximo topico, onde vou falar um pouco mais sobre rotas, porem vamos usar um router para facilitar nossa vida.
 
-* O que é ROUTER e por que usa-lo.
-
 * Criando uma simples API.
+
+.image images/pensador.jpg
+
+* 
+
+Antes de mais nada temos um projeto definido... e sabemos que vamos precisar servir 2 aplicações
+
+- App mobile
+- Web Site / gerenciador das aplicações
+
+Vamos começar? last's
+
+.image images/lats-go.png
+
+
+* Criando as rotas para API.
+
+Para criar nossas rotas vamos usar um *ROUTER* chamado Gorilla Mux. 
+- *MUX:* multiplexador de solicitação HTTP
+- *ROUTER:* CARINHA FEITO PARA FACILITAR NOSSAS VIDAS HTTP
+
+Então vamos lá...
+
+* 
+
+.code ../restcep/routers/routers.go
+
+*
+
+https://github.com/gorilla/mux
+
+https://godoc.org/github.com/julienschmidt/httprouter
 
 * O que é DOCKER e por que usar.
 
