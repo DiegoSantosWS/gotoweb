@@ -160,9 +160,11 @@ Sua url ficará assim: *http://localhost:1234/v1/cep/30626670*
 
 * 
 
-https://github.com/gorilla/mux
+* LINKS PARA DOC.
 
-https://godoc.org/github.com/julienschmidt/httprouter
+.link https://github.com/gorilla/mux GORILLA MUX
+
+.link https://godoc.org/github.com/julienschmidt/httprouter HTTP ROUTER
 
 * O que é DOCKER e por que usar.
 
