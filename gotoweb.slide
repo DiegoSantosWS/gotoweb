@@ -158,8 +158,6 @@ Sua url ficará assim: *http://localhost:1234/v1/cep/30626670*
 
 .link https://github.com/DiegoSantosWS/gocep/blob/master/controlls/v1.go#L16 Vamos ver o no exemplo
 
-* 
-
 * LINKS PARA DOC.
 
 .link https://github.com/gorilla/mux GORILLA MUX
