@@ -1,0 +1,124 @@
+GO PARA WEB COM E 100 DOCKER!
+
+16:40 24 Ago 2018
+Tags: foo, bar, baz
+
+Diego dos Santos
+Analista de sistemas, WSITEBRASIL
+
+E-mail: diegosantosws1@gmail.com
+Facebook: https://facebook.com/diegosantos132
+Twitter: @diegofdsemana
+
+
+* O que é Golang?
+
+.image /images/go.jpg
+
+* 
+Go é uma linguagem de programação que simplifica o compartilhamento de códigos. 
+Ela vem acompanhada de ferramentas que facilitam usar pacotes escritos por outras pessoas, além de fazer com que seja mais simples compartilhar nossos próprios pacotes.
+
+
+.link https://novatec.com.br/livros/go-em-acao/ ** _Trecho_ _do_ _livro_ _Go_ _In_ _Action_
+
+* Criar rotas com pacote HTTP do GO.
+
+Como sabemos o Go tem muitos pacotes que podem nos auxiliar na criação de nossos programas. Como vamos criar uma api simples, vamos usar o pacote HTTP.
+
+1) Mas o que é este pacote?
+
+*R:* É uma extenção do pacote *NET*. para saber mais basta acessar o link abaixo.
+
+2) O que ele faz?
+
+*R:* O pacote HTTP fornece interação entre cliente e servidor HTTP
+
+3) Como usar este pacote?
+
+*R:* Para usar ele em nosso programa é simples bata chamar ele no inicio do arquivo da mesma forma que chamamos os outros pacotes.
+
+continua...
+
+* Veja exemplo:
+
+  package main
+
+  import "net/http"
+
+  func main() {
+      //code...
+  }
+
+Quando formos usar mais de um pacote, podemos chama-los assim:
+
+  package main
+
+  import (
+      "net/http"
+      "github.com/gorilla/mux"
+  )
+
+  func main() {
+      //code...
+  }
+
+No exemplo acima eu chamei dois pacotes, o HTTP e MUX (usado para criar rotas)
+
+* 
+
+.play example_http/main.go
+
+* 
+
+No exemplo fiz um Get no website da minha empresa e convertir o retorno no para string para mostrar o resultado.
+.link https://golang.org/pkg/net/http/ DOCUMENTAÇÃO PKG HTTP.
+
+* Renderizando e entendo o pacote HTML/TEMPLATE do GO.
+
+Como sabemos toda aplicação web é importante termos um template ou um css para visualização do websites e/ou blog e etc... 
+Como já devo ter mencionado Go foi pensado também para web, e veio com ele um pacote HTML para renderizar nossos arquivos.
+
+Não pense que vai excrever page.go e colocar o HTML dentro dela e pensar que vai compilar... ta muito enganado.
+
+Para isso vamos usar o pacote HTML/TEMPLATE é muito simples de usar... 
+
+* Exemplo
+
+.code example_html/renderHtml/render.go
+
+Em uma simplicidade enorme ele simplesmente irá fazer um PARSE na minha pasta e carregar os arquivos. 
+
+* Exemplo 2
+
+.code example_html/models/index.go
+
+Vamos ver esse programa rodando, para que isso aconteça é preciso criarmos nossas rotas...
+
+*  
+
+.play example_html/main.go
+
+Se executarmos o programa vamos... teremos ele rodando na porta 1234 como informado no exemplo acima.
+Ao digitar http://localhost:1234 vai ser exibido a template da index se usamos a ROTA /contato será exibido o formulario.
+
+* 
+
+Com tudo eu não aconcelho criar uma aplicação web desta forma. É preferivel que crie uma API e uma aplicação web para consumir sua api.
+
+Desta forma você pode ser duas ou mais aplicações. Imagine que está criando um site, app mobile, e seu site terá um sistema para genrênciar o conteúdo.
+Logo se criar sua aplicação da forma mostrada, possívelmente so vai servir o site e o gerenciador. E o app mobile irá precisar de uma outra api. Ou seja, faça uma unica api para servir tudo de uma unica vez.
+
+Vamos entender um pouco mais sobre isso no próximo topico, onde vou falar um pouco mais sobre rotas, porem vamos usar um router para facilitar nossa vida.
+
+* O que é ROUTER e por que usa-lo.
+
+* Criando uma simples API.
+
+* O que é DOCKER e por que usar.
+
+* Dockerizando nossa API.
+
+* Deploy to the Digital Ocean.
+
+* Perguntas
