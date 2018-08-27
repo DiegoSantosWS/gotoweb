@@ -164,7 +164,19 @@ Sua url ficará assim: *http://localhost:1234/v1/cep/30626670*
 
 .link https://godoc.org/github.com/julienschmidt/httprouter HTTP ROUTER
 
-* O que é DOCKER e por que usar.
+* O que é DOCKER?
+
+.image images/docker-logo.png
+
+Docker é uma plataforma Open Source escrito em Go, que é uma linguagem de programação de alto desempenho desenvolvida dentro do Google, que facilita a criação e administração de ambientes isolados.
+
+* Mas por que usar o Docker?
+
+O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um container, e a partir desse momento o ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado.
+Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há necessidade de ajustes de ambiente para o correto funcionamento do serviço, o ambiente é sempre o mesmo, configure-o uma vez e replique-o quantas vezes quiser.
+Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles (veremos isso melhor em posts futuros).
+Não podemos nos esquecer também de que o Docker utiliza como backend default o LXC, com isso é possível definir limitações de recursos por container (memória, cpu, I/O, etc.)
+Para ficar um pouco mais claro, podemos ver na imagem abaixo a diferença em se utilizar o LXC puro e o Docker.
 
 * Dockerizando nossa API.
 
