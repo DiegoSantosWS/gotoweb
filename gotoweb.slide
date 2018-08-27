@@ -137,9 +137,28 @@ Então vamos lá...
 
 * 
 
-.code restcep/routers/routers.go
+.code projeto_api/routers/router.go
 
-*
+* 
+
+Neste caso estou criando uma API para consultar CEP que conciste em 2 rotas, uma delas so para mostrar uma mensagem
+a outra nos retorna os dados do cep, vamos entender...
+
+1 - http://localhost:1234/v1/
+    Recebe um get e mostra a seguinte mensagem no browser "Olá vamos consultar um cep?"
+
+2 - http://localhost:1234/v1/cep/{id}
+    Recebe um get e busca o metodo que vai consultar e retornar os dados de endereço?"
+
+Mas onde vou informar o numero do cep?
+
+R: O número do cep deve ser informado para o parametro {id} no metodo que faz a consulta ele receve esse valor em forma de variavel.
+Sua url ficará assim: *http://localhost:1234/v1/cep/30626670*
+
+
+.link https://github.com/DiegoSantosWS/gocep/blob/master/controlls/v1.go#L16 Vamos ver o no exemplo
+
+* 
 
 https://github.com/gorilla/mux
 

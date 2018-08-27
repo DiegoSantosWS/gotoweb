@@ -3,17 +3,20 @@ package routers
 import (
 	"net/http"
 
-	"github.com/DiegoSantosWS/gotoweb/projeto_api/models"
+	"github.com/DiegoSantosWS/restcep/controlls"
+
+	"github.com/DiegoSantosWS/restcep/helpers"
 	"github.com/gorilla/mux"
 )
 
+//Routers cria as routas usadas
 func Routers() {
-	r := mux.NewRouter() //Abre a instrancia para criar as rotas
-	r.HandleFunc("/v1/products/", models.Products)
-	r.HandleFunc("/v1/products/{id}", models.Products)
+	r := mux.NewRouter()
 
-	r.HandleFunc("/v1/clients/", models.Products)
-	r.HandleFunc("/v1/clients/{id}", models.Products)
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Olá vamos consultar um cep?"))
+	})
 
-	http.ListenAndServe(":1234", r)
+	r.HandleFunc("/v1/cep/{id}", controlls.Cep)
+	helpers.Runn(r)
 }
