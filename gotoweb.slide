@@ -137,7 +137,7 @@ Então vamos lá...
 
 * 
 
-.code ../restcep/routers/routers.go
+.code restcep/routers/routers.go
 
 *
 
