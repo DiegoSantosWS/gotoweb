@@ -170,11 +170,37 @@ Docker é uma plataforma Open Source escrito em Go, que é uma linguagem de prog
 
 O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um container, e a partir desse momento o ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado.
 Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há necessidade de ajustes de ambiente para o correto funcionamento do serviço, o ambiente é sempre o mesmo, configure-o uma vez e replique-o quantas vezes quiser.
-Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles (veremos isso melhor em posts futuros).
-Não podemos nos esquecer também de que o Docker utiliza como backend default o LXC, com isso é possível definir limitações de recursos por container (memória, cpu, I/O, etc.)
-Para ficar um pouco mais claro, podemos ver na imagem abaixo a diferença em se utilizar o LXC puro e o Docker.
+Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles.
+
+* Dockerfile.
+
+Como já foi dito podemos criar nossos container personalizando uma *Dockerfile* nada mais é um arquivos com comandos que serão executados no momento da criação do container.
+uma vez que personalizamos nossa imagem podemos criar um container com ela. veje um exemplo de *Dockerfile*
+
+.code projeto_api/Dockerfile
 
 * Dockerizando nossa API.
+
+Agora já criamos nossa API e Dockerfile, ou seja já iniciamos o processo para usar o Docker em nossa aplicação.
+
+Mas e agora já criei o dockerfile o que deve fazer?
+
+R: Para de fato criar nossa imagem precisamos executar o seguinte comando em um terminal.
+
+$ sudo docker build .
+
+Ao executar esse comando vamos uma imagem será criada. agora vamos criar nosso container partindo dessa imagem.
+
+* Docker compose
+
+$ sudo docker-compose up # cria o container e mantem o terminal bloqueado.
+
+$ sudo docker-compose up -d # cria o container e libera o terminal.
+
+Mas você está falando de docker compose e como isso será executado?
+
+Sim, para executar esse comando precisamos criar um arquivo chamado 
+*docker-compose.yml* na raiz do nosso projeto. Com esse arquivo já podemos cria nosso container e ver se está tudo funcionando.
 
 * Deploy to the Digital Ocean.
 
