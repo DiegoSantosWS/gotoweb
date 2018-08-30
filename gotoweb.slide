@@ -204,4 +204,111 @@ Sim, para executar esse comando precisamos criar um arquivo chamado
 
 * Deploy to the Digital Ocean.
 
-* Perguntas
+.image images/do1.png
+
+* 
+
+Vou entender que você já tem um cadastro na *Digital* *Ocean* para não perdemos tempo, vamos listar o que vamos precisar para fazer o deploy na DO.
+
+- git;
+- dokku;
+
+Bom é so isso mesmo.
+Mas que é *DOKKU*?
+
+Dokku é Plataform as a service, perecida com Heroku, o objetivo é facilitar o deploy de aplicações. Por padrão ele deixa sua aplicação dentro de um container docker. Ou seja, você não terá que instalar o docker nem ter que ficar configurando.
+Para fazer o deploy basta rodar o seguinte comando: *git* *push* *dokku* *master* 
+
+* Configurando o dokku
+
+Antes de começar vamos precisar instalar o dokku, para isso executamos o seguinte comando:
+
+.code code/bash.sh
+
+depois da instalação vamos ver se está tudo correto:
+
+.code code/bash1.sh
+
+Essa é a versão da minha maquina.
+
+Agora que ja configuramos o docku estamos quase pronto para fazer o deploy.
+
+* Configurano no Digital Ocean
+
+Acessando a conta vamos em...
+
+.image images/do/do-tela-create-2.png
+
+* 
+
+Na tela da imagem anterior vamos em clicar e Droplets.
+
+Na tela seguinte vamos ecolhar a opção *One-Click* *apps*
+
+.image images/do/droplets-do.png
+
+vamos escolher a opção *Dokku* *0.11.3* *on* *16.04*
+
+* 
+
+Agora vamos preencher as opções abaixo na tela que é escolher uma imagem e alterar nome do apps.
+
+Depois de ecolher a CPU, REGIÃO vai perguntar se tem uma chave SSH se tiver alguma incluida na DO ele vai listar ela para marcar para ser usada, 
+caso contrario clica no botão NEW SSH KEY para add...
+
+Na parte final da configuração vai ter opção para alterar o nome do APP.
+
+Se não for alterar basta clicar em *CREATE*
+
+*OBS: ALTERE O NOME DO APP *
+
+* CRIANDO APP DENTRO DO DOKKU
+
+.code code/bash-dokku.sh
+
+Agora saia da maquina do terminal da digital Ocean e vai até a aplicação que criamos
+
+* 
+
+.code code/bash-local.sh
+
+Quando executar o comando vai começar realizar o deploy. No terminal vai mostar tudo que está acontecendo durante o processo.
+Caso de um error ele vai te mostrar uma mensagem e onde foi o error.
+
+continua...
+
+* 
+
+Caso contrario ele vai mostrar os dados:
+
+.code code/bash-result.sh
+
+Vai ser exibido uma a mensagem assim, se você add um dominio vai mostrar o doiminio caso contrario vai mostar o IP e a porta para acessar no browser.
+
+* RESULTADO NO BROWSER
+
+Como Já criei o com um dominio veja o resultado como fica:
+
+Link da api criada: http://api.developinsight.com.br/v1/cep/numero-cep
+
+.image images/result.png
+
+* 
+
+.html code/video.html
+
+* LINKS
+
+.link http://dokku.viewdocs.io/dokku/ DOKKU
+.link http://dokku.viewdocs.io/dokku/deployment/application-deployment/ DOC DOKKU
+.link http://dokku.viewdocs.io/dokku/community/plugins/#official-plugins-beta PLUGINS TO DOKKU
+.link https://github.com/dokku/dokku-mysql MYSQL DOKKU
+
+.link https://www.digitalocean.com Digital Ocean
+.link https://github.com/DiegoSantosWS My GitHub
+.link http://bit.ly/gotowebc_100_docker Talk: GO PARA WEB COM E 100 DOCKER
+
+
+* THE END
+
+Any question?
