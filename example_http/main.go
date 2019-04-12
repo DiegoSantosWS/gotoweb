@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	resp, err := http.Get("http://wsitebrasil.com.br/")
+	resp, err := http.Get("http://fliper.app/")
 	if err != nil {
 		log.Fatal("Erro no GET  da url.", err.Error())
 	}
